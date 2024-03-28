@@ -16,14 +16,18 @@ def acked(err, msg):
 
 msg = {
 
-    'Type': 'Truck 1',
-    'Log': '67,8N',
-    'Lat': '56.7s'
+    'Type': 'key 7',
+    'Log': '30,8N',
+    'Lat': '27.7s'
 }
 
-producer.produce(topic='Delivery', partition=0, value= str(msg), callback=acked)
+#producer.produce(topic='Delivery', partition=1, value= str(msg), callback=acked)
+
+#The partition the message goes to isn't defined, There is an algorithm that defines where the message goes to
+producer.produce(topic='Delivery', key=msg['Type'], value= str(msg), callback=acked)
+
 producer.poll(1)
-#Message cant be sent twice in the scenario it was sent the first time and didnt go(connection not established) but remained in queue. When the producer produces again the messages end up being two
+#using poll() Message cant be sent twice. When using flash(), in the scenario it was sent the first time and didnt go(connection not established) but remained in queue. When the producer produces again the messages end up being two
 #producer.flush()
 
 
