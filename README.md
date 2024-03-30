@@ -79,10 +79,10 @@ While still in the kafka container, run this command
 kafka-topics --bootstrap-server broker:29092 --create --topic Delivery --if-not-exists --replication-factor 1 --partitions 2
 ```
 Run the producer script
-'''
-python3 producer.py.
+```
+python3 producer.py
 ```
 Run the different consumer scripts
-'''
+```
 python3 <script name>
 ```
