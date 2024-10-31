@@ -131,6 +131,11 @@ Run the different consumer scripts
 python3 <script name>
 ```
 
+To stop and remove all the containers defined in a Docker Compose file, along with any networks created by the docker-compose up command.Use the following command
+```
+sudo docker-compose down
+```
+
 #### Troubleshooting
 Here are some errors I had encountered and how to solve them
 
