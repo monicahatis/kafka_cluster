@@ -48,6 +48,49 @@ Consumes messages from the 'Delivery' topic within consumer group 1.
 #### Consumer 3
 Consumes messages from the 'Delivery' topic within consumer group 2.
 
+## Short Notes on kafka consumer groups and consumers
+In Apache Kafka, consumer groups allow multiple consumers to read from the same topic while maintaining a single logical subscription. Here's how Kafka behaves when you have two consumer groups, with one of those groups having several consumers:
+
+### Key Concepts
+#### Consumer Group:
+
+A consumer group is a set of consumers that work together to consume messages from one or more Kafka topics.
+Each consumer in a group reads from a different partition of the topic, ensuring that each message is processed by only one consumer in that group.
+
+#### Partitions:
+
+Kafka topics are divided into partitions, and messages within each partition are ordered.
+A partition can be consumed by only one consumer in a consumer group at a time.
+
+#### Behavior with Two Consumer Groups
+##### Scenario:
+Consumer Group A: Has several consumers (e.g., Consumer A1, A2, A3).
+Consumer Group B: Has one consumer (e.g., Consumer B1).
+
+##### Message Consumption:
+###### Independent Consumption:
+
+Both consumer groups operate independently. This means that Consumer Group A and Consumer Group B can consume the same messages from the topic without affecting each other.
+If a message is published to a topic, both Consumer Group A and Consumer Group B will receive that message, regardless of how many consumers are in each group.
+
+###### Load Balancing Within a Consumer Group:
+
+Within Consumer Group A, the consumers (A1, A2, A3) will divide the partitions among themselves. For example:
+If the topic has 6 partitions, the consumers will consume messages from their assigned partitions.
+If Consumer A1 is assigned partitions 0 and 1, A2 is assigned partitions 2 and 3, and A3 is assigned partitions 4 and 5, each consumer will read messages only from its assigned partitions.
+
+#### Offset Management:
+
+Each consumer group maintains its own offsets. This means that Consumer Group A and Consumer Group B can have different read positions in the topic.
+When a consumer in a group reads a message, it commits the offset, allowing it to remember where it left off for the next read. This offset is unique to each consumer group.
+
+#### Scaling:
+
+If you add more consumers to Consumer Group A, Kafka will reassign the partitions among the consumers in that group. If the number of consumers exceeds the number of partitions, some consumers will remain idle.
+Consumer Group B remains unaffected by changes in Consumer Group A.
+
+### Summary
+In summary, when you have two consumer groups in Kafka, each group consumes messages independently from the same topic, allowing for parallel processing. Consumers within a group share the load by distributing partitions among themselves, while offsets are managed separately for each group. This architecture allows Kafka to provide both high throughput and scalability for message processing.
 
 
 ## Running the project locally
