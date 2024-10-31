@@ -133,8 +133,9 @@ python3 <script name>
 
 #### Troubleshooting
 Here are some errors I had encountered and how to solve them
+$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
-Cannot connect to the Docker daemon at unix:///home/monicah/.docker/desktop/docker.sock. Is the docker daemon running?
+$${\color{red}Cannot connect to the Docker daemon at unix:///home/monicah/.docker/desktop/docker.sock. Is the docker daemon running?}$$
 
 How to start docker
 If you're on a Linux-based system, you can start the Docker daemon by running:
