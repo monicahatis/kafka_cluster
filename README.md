@@ -133,7 +133,6 @@ python3 <script name>
 
 #### Troubleshooting
 Here are some errors I had encountered and how to solve them
-$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
 $${\color{red}Cannot\space \ connect\space \ to\space \ the \space \ Docker \space \ daemon \space \ at \space \ unix:///home/.docker/desktop/docker.sock. Is\space \ the \space \ docker \space \ daemon \space \ running?}$$
 
