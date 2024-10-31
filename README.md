@@ -123,14 +123,13 @@ Then, log out and log back in to apply the group changes.
 Restart Docker Desktop (for macOS/Windows): If you're using Docker Desktop, a simple restart of the application often resolves connectivity issues.
 
 
-
 Another error I faced:
 Creating network "kafka-cluster_default" with the default driver
 Creating zookeeper ... error
 
-ERROR: for zookeeper  Cannot create container for service zookeeper: Conflict. The container name "/zookeeper" is already in use by container "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You have to remove (or rename) that container to be able to reuse that name.
+ERROR: for zookeeper Cannot create container for service zookeeper: Conflict. The container name "/zookeeper" is already in use by container "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You have to remove (or rename) that container to be able to reuse that name.
 
-ERROR: for zookeeper  Cannot create container for service zookeeper: Conflict. The container name "/zookeeper" is already in use by container "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You have to remove (or rename) that container to be able to reuse that name.
+ERROR: for zookeeper Cannot create container for service zookeeper: Conflict. The container name "/zookeeper" is already in use by container "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You have to remove (or rename) that container to be able to reuse that name.
 
 This error occurs because there’s already a running (or previously created) container named "zookeeper," which conflicts with your current attempt to create or start a new one. Here’s how you can resolve it:
 
