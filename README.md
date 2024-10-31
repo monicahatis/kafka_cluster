@@ -135,7 +135,7 @@ python3 <script name>
 Here are some errors I had encountered and how to solve them
 $${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
-$${\color{red}Cannot connect to the Docker daemon at unix:///home/monicah/.docker/desktop/docker.sock. Is the docker daemon running?}$$
+$${\color{red}Cannot\space \ connect\space \ to\space \ the \space \ Docker \space \ daemon \space \ at \space \ unix:///home/.docker/desktop/docker.sock. Is\space \ the \space \ docker \space \ daemon \space \ running?}$$
 
 How to start docker
 If you're on a Linux-based system, you can start the Docker daemon by running:
@@ -168,12 +168,13 @@ Restart Docker Desktop (for macOS/Windows): If you're using Docker Desktop, a si
 
 
 Another error I faced:
-Creating network "kafka-cluster_default" with the default driver
-Creating zookeeper ... error
 
-ERROR: for zookeeper Cannot create container for service zookeeper: Conflict. The container name "/zookeeper" is already in use by container "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You have to remove (or rename) that container to be able to reuse that name.
+$${\color{red}Creating \space \ network \space \ "kafka-cluster_default" \space \ with \space \ the \space \ default \space \ driver \space \
+Creating \space \ zookeeper ... error \space \
 
-ERROR: for zookeeper Cannot create container for service zookeeper: Conflict. The container name "/zookeeper" is already in use by container "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You have to remove (or rename) that container to be able to reuse that name.
+ERROR: \space \ for \space \ zookeeper \space \ Cannot \space \ create \space \ container \space \ for \space \ service \space \ zookeeper: \space \ Conflict. \space \ The \space \ container \space \ name \space \ "/zookeeper" \space \ is \space \ already \space \ in \space \ use \space \ by \space \ container \space \ "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". \space \ You \space \ have \space \ to \space \ remove \space \ (or \space \ rename) \space \ that \space \ container \space \ to \space \ be \space \ able \space \ to \space \ reuse \space \ that \space \ name.
+
+ERROR: \space \ for \space \ zookeeper \space \ Cannot \space \ create \space \ container \space \ for \space \ service \space \ zookeeper: \space \ Conflict. \space \ The \space \ container \space \ name \space \ "/zookeeper" \space \ is \space \ already \space \ in \space \ use \space \ by \space \ container \space \ "bf3865684ac0779c2db17d28b6a3f6d764462e6080ade7e27f91da438b493cd3". You \space \ have \space \ to \space \ remove \space \ (or \space \ rename) \space \ that \space \ container \space \ to \space \ be \space \ able \space \ to \space \ reuse \space \ that \space \ name.}$$
 
 This error occurs because there’s already a running (or previously created) container named "zookeeper," which conflicts with your current attempt to create or start a new one. Here’s how you can resolve it:
 
